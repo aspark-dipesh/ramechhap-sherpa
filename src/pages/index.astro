@@ -1,0 +1,452 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+// import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    id='home'
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Know Us',
+        href: '#about',
+        icon: 'tabler:arrow-down',
+      },
+      // { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+     <span class="hidden xl:inline"> Building Trust, Building Dreams</span><br>
+      <span class="text-accent dark:text-white highlight text-4xl tracking-wider">Ramechhap sherpa Construction
+        </span> 
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+         We specialize in bringing your construction dreams to life with expertise and reliability</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
+      we are a construction company that specializes in building and renovating homes, offices, and commercial spaces. We are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.
+      
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- About *************** -->
+  <Content
+  id="about"
+  columns={3}
+  items={[
+    {
+      icon: 'tabler:brand-dribbble',
+      callToAction: {
+        target: '_blank',
+        text: 'Dribbble',
+        href: '#',
+      },
+    },
+    {
+      icon: 'tabler:brand-behance',
+      callToAction: {
+        target: '_blank',
+        text: 'Behance',
+        href: '#',
+      },
+    },
+    {
+      icon: 'tabler:brand-pinterest',
+      callToAction: {
+        target: '_blank',
+        text: 'Pinterest',
+        href: '#',
+      },
+    },
+  ]}
+  image={{
+    src: '~/assets/images/aboutus.png',
+    alt: 'Colorful Image',
+    loading: 'eager',
+  }}
+>
+  <Fragment slot="content">
+    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Us</h2>
+    <p>
+     Hello! We are Ramechhap Sherpa Construction, a construction company that specializes in building 
+     and renovating homes, offices, and commercial spaces. We are dedicated to providing our clients with
+      the highest quality construction services
+    </p>
+    <br />
+    <p>
+     Our main value is to provide the best quality construction services to our clients. We are dedicated to 
+      providing our clients with the highest quality construction services. Our team of experienced professionals
+        will work with you every step of the way to ensure that your project is completed on time and within budget.
+    </p>
+    <br />
+    <p>If you're curious to dive deeper into Our work, you can follow us:</p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Our services -->
+  <Features
+    id="services"
+    tagline="Our Expertise"
+    title="What to expect from Ramchhap Sherpa Construction?"
+    subtitle="We are a construction company that specializes in building and renovating homes, offices, and commercial spaces. We are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget."
+    items={[
+      {
+        title: 'Building Construction',
+        description:
+          'We specialize in building homes, offices, and commercial spaces. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.',
+        icon: 'tabler:building',
+        
+      },
+      {
+        title: 'Hydropower construction',
+        description:
+          'We specialize in building hydropower projects. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Irrigation Construction',
+        description:'We specilize in building Irrigation projects.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Roads',
+        description:
+          'We specialize in building homes, offices, and commercial spaces. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.',
+        icon: 'tabler:rocket',
+      },
+      
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+<!-- 
+  <Content
+    isReversed
+    tagline="Inside template"
+    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    items={[
+      {
+        title: 'Built on top of Astro 4.0',
+        description:
+          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+      },
+      {
+        title: 'Styled using Tailwind CSS',
+        description:
+          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+      },
+      {
+        title: 'Cross-browser compatibility',
+        description:
+          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+      Gain a competitive advantage by incorporating industry leading practices
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+ 
+
+  <!-- <Steps
+    title="Get your dream website up and running in no time with AstroWind."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</em>',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  /> -->
+
+  <!-- Features2 Widget ************** -->
+ 
+  <Features2
+    id='projects'
+    title="Our Work Speaks for Itself"
+    subtitle='See a glimpse of the exceptional work we deliver.'
+    tagline="Our Projects"
+    
+  >
+    <Fragment slot='bg'>
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+    <Fragment >
+      <div class="bg-blue-50 font-sans flex items-center justify-center">
+        <div x-data="{ openTab: 1 }" class="p-8">
+            <div class=" mx-auto">
+              <div class="flex justify-center">
+
+                <div class="mb-4 flex space-x-4 p-2 ">
+                    <button x-on:click="openTab = 1" :class="{ 'border-b-[3px] border-black': openTab === 1 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">All project</button>
+                    <button x-on:click="openTab = 2" :class="{ 'border-b-[3px] border-black': openTab === 2 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Ongoing Project</button>
+                    <button x-on:click="openTab = 3" :class="{ 'border-b-[3px] border-black': openTab === 3 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Project Completed</button>
+                </div>
+              </div>
+    
+                <div x-show="openTab === 1" class="transition-all duration-300 ">
+                  <Features2
+                  classes={{ container: '!py-4' }}
+                  items={[
+                    {
+                      title: 'Gopal Newas',
+                      description: "Gopal Newas is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
+                     
+                      image:{src:'~/assets/images/gopalnewas.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Shankar Dev Campus',
+                      description: 'Shankar Dev Campus is a project that was completed in 2020. It is a educational building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                      image:{src:'~/assets/images/sankerdev.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Vinayak Residency',
+                      description:
+                        "Vinayak Residency is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
+                        image:{src:'~/assets/images/vinayak.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Labim Mall',
+                      description:
+                        'Labim Mall is a project that was completed in 2020. It is a commercial building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                        image:{src:'~/assets/images/labim.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Rupakot resort',
+                      description:
+                        'Rupakot Resort is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+                        image:{src:'~/assets/images/rupakot.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Karnali Bridge',
+                      description:
+                        "Karlali Bridge is our one of the biggest project. Which we have completet on 2022. It a bridge that connects two cities. The project was completed on time and within budget.",
+                        image:{src:'~/assets/images/karnali.jpg',alt:'hero image'}
+                    },
+                    
+                    
+                    
+                  ]}
+                 
+                  >
+                  <Fragment slot='bg'>
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+                  </Fragment>
+                  </Features2>          
+                </div>
+    
+                <div x-show="openTab === 2" class="transition-all duration-300 ">
+                  <Features2
+                  classes={{ container: '!py-4' }}
+                  items={[
+                    {
+                      title: 'Gopal Newas',
+                      description: "Gopal Newas is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
+                     
+                      image:{src:'~/assets/images/gopalnewas.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Vinayak Residency',
+                      description:
+                        "Vinayak Residency is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
+                        image:{src:'~/assets/images/vinayak.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Rupakot resort',
+                      description:
+                        'Rupakot Resort is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+                        image:{src:'~/assets/images/rupakot.jpg',alt:'hero image'}
+                    },
+                   
+                    
+                  ]}
+                  >
+                  <Fragment slot='bg'>
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+                  </Fragment>
+                  </Features2>
+                </div>
+    
+                <div x-show="openTab === 3" class="transition-all duration-300 ">
+                  <Features2
+                  classes={{ container: '!py-4' }}
+                  items={[
+                     {
+                      title: 'Karnali Bridge',
+                      description:
+                        "Karlali Bridge is our one of the biggest project. Which we have completet on 2022. It a bridge that connects two cities. The project was completed on time and within budget.",
+                        image:{src:'~/assets/images/karnali.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Labim Mall',
+                      description:
+                        'Labim Mall is a project that was completed in 2020. It is a commercial building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                        image:{src:'~/assets/images/labim.jpg',alt:'hero image'}
+                    },
+                    {
+                      title: 'Shankar Dev Campus',
+                      description: 'Shankar Dev Campus is a project that was completed in 2020. It is a educational building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                      image:{src:'~/assets/images/sankerdev.jpg',alt:'hero image'}
+                    },
+                    
+                  ]}
+                  >
+                  <Fragment slot='bg'>
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+                  </Fragment>
+                  </Features2>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    </Fragment>
+    
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <!-- <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why AstroWind?',
+        description:
+          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+      },
+      {
+        title: 'What do I need to start?',
+        description:
+          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+      },
+      {
+        title: 'How to install the Astro + Tailwind CSS template?',
+        description:
+          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+      },
+      {
+        title: "What's something that you don't understand?",
+        description:
+          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+      },
+      {
+        title: 'What is something that you would like to try again?',
+        description:
+          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+      },
+      {
+        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        description:
+          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+      },
+    ]}
+  /> -->
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Completed Project', amount: '20' },
+      { title: 'Ongoing Project', amount: '10' },
+      { title: 'Government Project', amount: '5' },
+      { title: 'Satisfied Client', amount: '20' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get a call',
+        href: '#contact',
+        target: '_blank',
+        icon: 'tabler:phone',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Request For Quotation
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.
+    </Fragment>
+  </CallToAction>
+</Layout>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>

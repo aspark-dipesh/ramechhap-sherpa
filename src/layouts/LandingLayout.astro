@@ -1,0 +1,65 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+
+import { headerData } from '~/navigation';
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+const { metadata } = Astro.props;
+---
+
+<PageLayout metadata={metadata}>
+  <Fragment slot="announcement">
+    <slot name="announcement" />
+  </Fragment>
+  <Fragment slot="header">
+    <slot name="header">
+      <Header
+        links={headerData?.links[2] ? [headerData.links[2]] : undefined}
+        actions={[
+          {
+            text: 'Download',
+            href: 'https://github.com/onwidget/astrowind',
+          },
+        ]}
+        showToggleTheme
+        position="right"
+      />
+    </slot>
+  </Fragment>
+  <slot />
+</PageLayout>
+<script is:inline>
+  const tabsContainer = document.querySelector("#tabs");
+
+  const tabTogglers = tabsContainer.querySelectorAll("a");
+  console.log(tabTogglers);
+
+  tabTogglers.forEach(function(toggler) {
+  toggler.addEventListener("click", function(e) {
+  e.preventDefault();
+
+  const tabName = this.getAttribute("href");
+
+  const tabContents = document.querySelector("#tab-contents");
+
+  for (let i = 0; i < tabContents.children.length; i++) {
+
+  tabTogglers[i].parentElement.classList.remove("border-blue-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
+  if ("#" + tabContents.children[i].id === tabName) {
+  continue;
+  }
+  tabContents.children[i].classList.add("hidden");
+
+  }
+  e.target.parentElement.classList.add("border-blue-400", "border-b-4", "-mb-px", "opacity-100");
+  });
+  });
+
+document.getElementById("default-tab").click();
+
+</script>

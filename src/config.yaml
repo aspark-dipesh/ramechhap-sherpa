@@ -1,0 +1,72 @@
+site:
+  name: Ramechhap Sherpa construction
+  site: 'https://astrowind.vercel.app'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+
+# Default SEO metadata
+metadata:
+  title:
+    default: ramchhap sherpa construction
+    template: '%title% - %siteName%'
+  description: "\U0001F680 Ramechhap Sherpa Construction is a construction company based in Ramechhap, Nepal. We are a team of experienced professionals who are dedicated to providing quality construction services to our clients. Our services include building construction, road construction, and renovation work. We are committed to delivering projects on time and within budget. Contact us today to learn more about our services and how we can help you with your construction needs."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Ramechhap Sherpa Construction
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@RSC'
+    site: '@RSC'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
