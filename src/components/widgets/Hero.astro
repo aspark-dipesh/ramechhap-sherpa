@@ -1,5 +1,5 @@
 ---
-import Image from '~/components/common/Image.astro';
+// import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import type { CallToAction } from '~/types';
 
@@ -11,6 +11,7 @@ export interface Props {
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown; // TODO: find HTMLElementProps
+  sliderList?: string[];
 }
 
 const {
@@ -20,53 +21,70 @@ const {
   tagline,
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
-  image = await Astro.slots.render('image'),
+  // image = await Astro.slots.render('image'),
+  sliderList = [],
 } = Astro.props;
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+
+  </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
-            <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+    <div class=" relative">
+      <div class="absolute inset-0 z-10 py-12 md:py-20 bg-white/20 backdrop-blur-sm dark:bg-black/20">
+        <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto  ">
           {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
+            tagline && (
+              <p
+                class="text-base text-black dark:text-blue-200 font-bold tracking-wide uppercase"
+                set:html={tagline}
+              />
             )
           }
+          {
+            title && (
+              <h1
+                class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 "
+                set:html={title}
+              />
+            )
+          }
+          <div class="max-w-3xl mx-auto z-10">
+            {subtitle && <p class="text-xl mb-6 dark:text-slate-300 !z-10" set:html={subtitle} />}
+            {
+              actions && (
+                <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 z-10">
+                  {Array.isArray(actions) ? (
+                    actions.map((action) => (
+                      <div class="flex w-full sm:w-auto z-10">
+                        <Button {...(action || {})} class="w-full sm:mb-0 z-10" />
+                      </div>
+                    ))
+                  ) : (
+                    <Fragment set:html={actions} />
+                  )}
+                </div>
+              )
+            }
+          </div>
+          {content && <Fragment  set:html={content} />}
+          
         </div>
-        {content && <Fragment set:html={content} />}
+
       </div>
-      <div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+         {
+          sliderList.map((item) => (
+            <div class="swiper-slide">
+              <img src={item} alt=""/>
+            </div>
+         ))}
+        </div>
+      </div>
+      <!-- <div>
         {
           image && (
             <div class="relative m-auto max-w-5xl">
@@ -86,7 +104,59 @@ const {
             </div>
           )
         }
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
+
+<style is:inline>
+  .swiper {
+    width: 100%;
+    height: 60vh;
+     z-index: 0 !important;
+   }
+
+   .swiper-slide {
+     text-align: center;
+     font-size: 18px;
+     background: #fff;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: -10 !important;
+   }
+
+   .swiper-slide img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: fill;
+   }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"  />
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+
+  <!-- Initialize Swiper -->
+  <script is:inline>
+    const swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    swiper();
+    
+    
+  </script>

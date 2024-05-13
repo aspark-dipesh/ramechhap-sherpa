@@ -13,11 +13,10 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Ramechhep Sherpa Construction',
   ignoreTitleTemplate: true,
 };
 ---
-
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
@@ -33,22 +32,27 @@ const metadata = {
       // { text: 'Learn more', href: '#features' },
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+    sliderList={[
+      '/slider1.jpg', 'slider2.jpg', 'slider3.jpg'
+    ]}
   >
+
     <Fragment slot="title">
      <span class="hidden xl:inline"> Building Trust, Building Dreams</span><br>
-      <span class="text-accent dark:text-white highlight text-4xl tracking-wider">Ramechhap sherpa Construction
+      <span class="text-accent dark:text-white highlight text-4xl tracking-wider z-50">Ramechhap sherpa Construction
         </span> 
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
+      <span class="hidden sm:inline !z-50">
          We specialize in bringing your construction dreams to life with expertise and reliability</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600 !z-50">AstroWind: Production-ready.</span>
       we are a construction company that specializes in building and renovating homes, offices, and commercial spaces. We are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.
       
     </Fragment>
   </Hero>
+  
 
   <!-- Note Widget ******************* -->
 
@@ -232,15 +236,15 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
     <Fragment >
-      <div class="bg-blue-50 font-sans flex items-center justify-center">
+      <div class="bg-blue-50 dark:bg-transparent  font-sans flex items-center justify-center">
         <div x-data="{ openTab: 1 }" class="p-8">
             <div class=" mx-auto">
               <div class="flex justify-center">
 
                 <div class="mb-4 flex space-x-4 p-2 ">
-                    <button x-on:click="openTab = 1" :class="{ 'border-b-[3px] border-black': openTab === 1 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">All project</button>
-                    <button x-on:click="openTab = 2" :class="{ 'border-b-[3px] border-black': openTab === 2 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Ongoing Project</button>
-                    <button x-on:click="openTab = 3" :class="{ 'border-b-[3px] border-black': openTab === 3 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Project Completed</button>
+                    <button x-on:click="openTab = 1" :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 1 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">All project</button>
+                    <button x-on:click="openTab = 2" :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 2 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Ongoing Project</button>
+                    <button x-on:click="openTab = 3" :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 3 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Project Completed</button>
                 </div>
               </div>
     
@@ -359,7 +363,7 @@ const metadata = {
             </div>
         </div>
     </div>
-      
+    <script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     </Fragment>
     
   </Features2>
@@ -449,4 +453,3 @@ const metadata = {
   </CallToAction>
 </Layout>
 
-<script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
