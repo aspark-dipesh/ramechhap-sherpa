@@ -7,7 +7,7 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 // import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 // import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -17,11 +17,12 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
   <Hero
-    id='home'
+    id="home"
     actions={[
       {
         variant: 'primary',
@@ -32,27 +33,25 @@ const metadata = {
       // { text: 'Learn more', href: '#features' },
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
-    sliderList={[
-      '/slider1.jpg', 'slider2.jpg', 'slider3.jpg'
-    ]}
+    sliderList={['/slider1.jpg', 'slider2.jpg', 'slider3.jpg']}
   >
-
     <Fragment slot="title">
-     <span class="hidden xl:inline"> Building Trust, Building Dreams</span><br>
-      <span class="text-accent dark:text-white highlight text-4xl tracking-wider z-50">Ramechhap sherpa Construction
-        </span> 
+      <span class="hidden xl:inline"> Building Trust, Building Dreams</span><br />
+      <span class="text-accent dark:text-white highlight text-4xl tracking-wider z-50"
+        >Ramechhap sherpa Construction
+      </span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline !z-50">
-         We specialize in bringing your construction dreams to life with expertise and reliability</span
+        We specialize in bringing your construction dreams to life with expertise and reliability</span
       >
       <span class="block mb-1 sm:hidden font-bold text-blue-600 !z-50">AstroWind: Production-ready.</span>
-      we are a construction company that specializes in building and renovating homes, offices, and commercial spaces. We are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.
-      
+      we are a construction company that specializes in building and renovating homes, offices, and commercial spaces. We
+      are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals
+      will work with you every step of the way to ensure that your project is completed on time and within budget.
     </Fragment>
   </Hero>
-  
 
   <!-- Note Widget ******************* -->
 
@@ -60,63 +59,63 @@ const metadata = {
 
   <!-- About *************** -->
   <Content
-  id="about"
-  columns={3}
-  items={[
-    {
-      icon: 'tabler:brand-dribbble',
-      callToAction: {
-        target: '_blank',
-        text: 'Dribbble',
-        href: '#',
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-dribbble',
+        callToAction: {
+          target: '_blank',
+          text: 'Dribbble',
+          href: '#',
+        },
       },
-    },
-    {
-      icon: 'tabler:brand-behance',
-      callToAction: {
-        target: '_blank',
-        text: 'Behance',
-        href: '#',
+      {
+        icon: 'tabler:brand-behance',
+        callToAction: {
+          target: '_blank',
+          text: 'Behance',
+          href: '#',
+        },
       },
-    },
-    {
-      icon: 'tabler:brand-pinterest',
-      callToAction: {
-        target: '_blank',
-        text: 'Pinterest',
-        href: '#',
+      {
+        icon: 'tabler:brand-pinterest',
+        callToAction: {
+          target: '_blank',
+          text: 'Pinterest',
+          href: '#',
+        },
       },
-    },
-  ]}
-  image={{
-    src: '~/assets/images/aboutus.png',
-    alt: 'Colorful Image',
-    loading: 'eager',
-  }}
->
-  <Fragment slot="content">
-    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Us</h2>
-    <p>
-     Hello! We are Ramechhap Sherpa Construction, a construction company that specializes in building 
-     and renovating homes, offices, and commercial spaces. We are dedicated to providing our clients with
-      the highest quality construction services
-    </p>
-    <br />
-    <p>
-     Our main value is to provide the best quality construction services to our clients. We are dedicated to 
-      providing our clients with the highest quality construction services. Our team of experienced professionals
-        will work with you every step of the way to ensure that your project is completed on time and within budget.
-    </p>
-    <br />
-    <p>If you're curious to dive deeper into Our work, you can follow us:</p>
-  </Fragment>
+    ]}
+    image={{
+      src: '~/assets/images/aboutus.png',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Us</h2>
+      <p>
+        Hello! We are Ramechhap Sherpa Construction, a construction company that specializes in building and renovating
+        homes, offices, and commercial spaces. We are dedicated to providing our clients with the highest quality
+        construction services
+      </p>
+      <br />
+      <p>
+        Our main value is to provide the best quality construction services to our clients. We are dedicated to
+        providing our clients with the highest quality construction services. Our team of experienced professionals will
+        work with you every step of the way to ensure that your project is completed on time and within budget.
+      </p>
+      <br />
+      <p>If you're curious to dive deeper into Our work, you can follow us:</p>
+    </Fragment>
 
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  </Fragment>
-</Content>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
-<!-- Our services -->
+  <!-- Our services -->
   <Features
     id="services"
     tagline="Our Expertise"
@@ -128,7 +127,6 @@ const metadata = {
         description:
           'We specialize in building homes, offices, and commercial spaces. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.',
         icon: 'tabler:building',
-        
       },
       {
         title: 'Hydropower construction',
@@ -138,7 +136,7 @@ const metadata = {
       },
       {
         title: 'Irrigation Construction',
-        description:'We specilize in building Irrigation projects.',
+        description: 'We specilize in building Irrigation projects.',
         icon: 'tabler:list-check',
       },
       {
@@ -147,12 +145,11 @@ const metadata = {
           'We specialize in building homes, offices, and commercial spaces. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.',
         icon: 'tabler:rocket',
       },
-      
     ]}
   />
 
   <!-- Content Widget **************** -->
-<!-- 
+  <!-- 
   <Content
     isReversed
     tagline="Inside template"
@@ -189,8 +186,6 @@ const metadata = {
     </Fragment>
   </Content> -->
 
- 
-
   <!-- <Steps
     title="Get your dream website up and running in no time with AstroWind."
     items={[
@@ -224,159 +219,157 @@ const metadata = {
   /> -->
 
   <!-- Features2 Widget ************** -->
- 
+
   <Features2
-    id='projects'
+    id="projects"
     title="Our Work Speaks for Itself"
-    subtitle='See a glimpse of the exceptional work we deliver.'
+    subtitle="See a glimpse of the exceptional work we deliver."
     tagline="Our Projects"
-    
   >
-    <Fragment slot='bg'>
+    <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-    <Fragment >
-      <div class="bg-blue-50 dark:bg-transparent  font-sans flex items-center justify-center">
+    <Fragment>
+      <div class="bg-blue-50 dark:bg-transparent font-sans flex items-center justify-center">
         <div x-data="{ openTab: 1 }" class="p-8">
-            <div class=" mx-auto">
-              <div class="flex justify-center">
-
-                <div class="mb-4 flex space-x-4 p-2 ">
-                    <button x-on:click="openTab = 1" :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 1 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">All project</button>
-                    <button x-on:click="openTab = 2" :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 2 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Ongoing Project</button>
-                    <button x-on:click="openTab = 3" :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 3 }" class="inline-flex py-2 px-4 border-b-[3px]   transition-opacity duration-300">Project Completed</button>
-                </div>
+          <div class="mx-auto">
+            <div class="flex justify-center">
+              <div class="mb-4 flex space-x-4 p-2">
+                <button
+                  x-on:click="openTab = 1"
+                  :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 1 }"
+                  class="inline-flex py-2 px-4 border-b-[3px] transition-opacity duration-300">All project</button
+                >
+                <button
+                  x-on:click="openTab = 2"
+                  :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 2 }"
+                  class="inline-flex py-2 px-4 border-b-[3px] transition-opacity duration-300">Ongoing Project</button
+                >
+                <button
+                  x-on:click="openTab = 3"
+                  :class="{ 'border-b-[3px] dark:border-white border-black': openTab === 3 }"
+                  class="inline-flex py-2 px-4 border-b-[3px] transition-opacity duration-300">Project Completed</button
+                >
               </div>
-    
-                <div x-show="openTab === 1" class="transition-all duration-300 ">
-                  <Features2
-                  classes={{ container: '!py-4' }}
-                  items={[
-                    {
-                      title: 'Gopal Newas',
-                      description: "Gopal Newas is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
-                     
-                      image:{src:'~/assets/images/gopalnewas.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Shankar Dev Campus',
-                      description: 'Shankar Dev Campus is a project that was completed in 2020. It is a educational building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
-                      image:{src:'~/assets/images/sankerdev.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Vinayak Residency',
-                      description:
-                        "Vinayak Residency is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
-                        image:{src:'~/assets/images/vinayak.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Labim Mall',
-                      description:
-                        'Labim Mall is a project that was completed in 2020. It is a commercial building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
-                        image:{src:'~/assets/images/labim.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Rupakot resort',
-                      description:
-                        'Rupakot Resort is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
-                        image:{src:'~/assets/images/rupakot.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Karnali Bridge',
-                      description:
-                        "Karlali Bridge is our one of the biggest project. Which we have completet on 2022. It a bridge that connects two cities. The project was completed on time and within budget.",
-                        image:{src:'~/assets/images/karnali.jpg',alt:'hero image'}
-                    },
-                    
-                    
-                    
-                  ]}
-                 
-                  >
-                  <Fragment slot='bg'>
-                    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-                  </Fragment>
-                  </Features2>          
-                </div>
-    
-                <div x-show="openTab === 2" class="transition-all duration-300 ">
-                  <Features2
-                  classes={{ container: '!py-4' }}
-                  items={[
-                    {
-                      title: 'Gopal Newas',
-                      description: "Gopal Newas is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
-                     
-                      image:{src:'~/assets/images/gopalnewas.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Vinayak Residency',
-                      description:
-                        "Vinayak Residency is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.",
-                        image:{src:'~/assets/images/vinayak.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Rupakot resort',
-                      description:
-                        'Rupakot Resort is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
-                        image:{src:'~/assets/images/rupakot.jpg',alt:'hero image'}
-                    },
-                   
-                    
-                  ]}
-                  >
-                  <Fragment slot='bg'>
-                    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-                  </Fragment>
-                  </Features2>
-                </div>
-    
-                <div x-show="openTab === 3" class="transition-all duration-300 ">
-                  <Features2
-                  classes={{ container: '!py-4' }}
-                  items={[
-                     {
-                      title: 'Karnali Bridge',
-                      description:
-                        "Karlali Bridge is our one of the biggest project. Which we have completet on 2022. It a bridge that connects two cities. The project was completed on time and within budget.",
-                        image:{src:'~/assets/images/karnali.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Labim Mall',
-                      description:
-                        'Labim Mall is a project that was completed in 2020. It is a commercial building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
-                        image:{src:'~/assets/images/labim.jpg',alt:'hero image'}
-                    },
-                    {
-                      title: 'Shankar Dev Campus',
-                      description: 'Shankar Dev Campus is a project that was completed in 2020. It is a educational building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
-                      image:{src:'~/assets/images/sankerdev.jpg',alt:'hero image'}
-                    },
-                    
-                  ]}
-                  >
-                  <Fragment slot='bg'>
-                    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-                  </Fragment>
-                  </Features2>
-                </div>
             </div>
+
+            <div x-show="openTab === 1" class="transition-all duration-300">
+              <Features2
+                classes={{ container: '!py-4' }}
+                items={[
+                  {
+                    title: 'Gopal Newas',
+                    description:
+                      'Gopal Newas is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+
+                    image: { src: '~/assets/images/gopalnewas.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Shankar Dev Campus',
+                    description:
+                      'Shankar Dev Campus is a project that was completed in 2020. It is a educational building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                    image: { src: '~/assets/images/sankerdev.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Vinayak Residency',
+                    description:
+                      'Vinayak Residency is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+                    image: { src: '~/assets/images/vinayak.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Labim Mall',
+                    description:
+                      'Labim Mall is a project that was completed in 2020. It is a commercial building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                    image: { src: '~/assets/images/labim.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Rupakot resort',
+                    description:
+                      'Rupakot Resort is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+                    image: { src: '~/assets/images/rupakot.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Karnali Bridge',
+                    description:
+                      'Karlali Bridge is our one of the biggest project. Which we have completet on 2022. It a bridge that connects two cities. The project was completed on time and within budget.',
+                    image: { src: '~/assets/images/karnali.jpg', alt: 'hero image' },
+                  },
+                ]}
+              >
+                <Fragment slot="bg">
+                  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+                </Fragment>
+              </Features2>
+            </div>
+
+            <div x-show="openTab === 2" class="transition-all duration-300">
+              <Features2
+                classes={{ container: '!py-4' }}
+                items={[
+                  {
+                    title: 'Gopal Newas',
+                    description:
+                      'Gopal Newas is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+
+                    image: { src: '~/assets/images/gopalnewas.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Vinayak Residency',
+                    description:
+                      'Vinayak Residency is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+                    image: { src: '~/assets/images/vinayak.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Rupakot resort',
+                    description:
+                      'Rupakot Resort is a project that we are currently working on. It is a residential building that is being constructed in the heart of Kathmandu. The project is expected to be completed by the end of 2025.',
+                    image: { src: '~/assets/images/rupakot.jpg', alt: 'hero image' },
+                  },
+                ]}
+              >
+                <Fragment slot="bg">
+                  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+                </Fragment>
+              </Features2>
+            </div>
+
+            <div x-show="openTab === 3" class="transition-all duration-300">
+              <Features2
+                classes={{ container: '!py-4' }}
+                items={[
+                  {
+                    title: 'Karnali Bridge',
+                    description:
+                      'Karlali Bridge is our one of the biggest project. Which we have completet on 2022. It a bridge that connects two cities. The project was completed on time and within budget.',
+                    image: { src: '~/assets/images/karnali.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Labim Mall',
+                    description:
+                      'Labim Mall is a project that was completed in 2020. It is a commercial building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                    image: { src: '~/assets/images/labim.jpg', alt: 'hero image' },
+                  },
+                  {
+                    title: 'Shankar Dev Campus',
+                    description:
+                      'Shankar Dev Campus is a project that was completed in 2020. It is a educational building that is located in the heart of Kathmandu. The project was completed on time and within budget.',
+                    image: { src: '~/assets/images/sankerdev.jpg', alt: 'hero image' },
+                  },
+                ]}
+              >
+                <Fragment slot="bg">
+                  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+                </Fragment>
+              </Features2>
+            </div>
+          </div>
         </div>
-    </div>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+      </div>
+      <script is:inline src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     </Fragment>
-    
   </Features2>
 
   <!-- HighlightedPosts Widget ******* -->
-
-  <!-- <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  /> -->
 
   <!-- FAQs Widget ******************* -->
 
@@ -433,23 +426,178 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
+    id="contact"
     actions={[
       {
         variant: 'primary',
         text: 'Get a call',
-        href: '#contact',
-        target: '_blank',
+        href: '#message',
         icon: 'tabler:phone',
       },
     ]}
   >
-    <Fragment slot="title">
-      Request For Quotation
-    </Fragment>
+    <Fragment slot="title"> Request For Quotation </Fragment>
 
     <Fragment slot="subtitle">
-      We are dedicated to providing our clients with the highest quality construction services. Our team of experienced professionals will work with you every step of the way to ensure that your project is completed on time and within budget.
+      We are dedicated to providing our clients with the highest quality construction services. Our team of experienced
+      professionals will work with you every step of the way to ensure that your project is completed on time and within
+      budget.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </CallToAction>
-</Layout>
+  <section id="message">
+    
+      <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16 container mx-auto">
+        <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
+          <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">Fill in the form below</h2><form>
+            <div class="grid gap-4">
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label for="hs-firstname-contacts" class="sr-only">First Name</label>
+                  <input
+                    type="text"
+                    name="hs-firstname-contacts"
+                    id="hs-firstname-contacts"
+                    class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                    placeholder="First Name"
+                  />
+                </div><div>
+                  <label for="hs-lastname-contacts" class="sr-only">Last Name</label>
+                  <input
+                    type="text"
+                    name="hs-firstname-contacts"
+                    id="hs-lastname-contacts"
+                    class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div><div>
+                <label for="hs-email-contacts" class="sr-only">Email</label>
+                <input
+                  type="email"
+                  name="hs-email-contacts"
+                  id="hs-email-contacts"
+                  autocomplete="email"
+                  class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                  placeholder="Email"
+                />
+              </div><div>
+                <label for="hs-phone-number" class="sr-only">Phone Number</label>
+                <input
+                  type="tel"
+                  name="hs-phone-number"
+                  id="hs-phone-number"
+                  class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                  placeholder="Phone Number"
+                />
+              </div><div>
+                <label for="hs-about-contacts" class="sr-only">Details</label>
+                <textarea
+                  id="hs-about-contacts"
+                  name="hs-about-contacts"
+                  rows="4"
+                  class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                  placeholder="Details"></textarea>
+              </div>
+            </div><div class="mt-4 grid">
+              <button
+                type="submit"
+                class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-700 focus-visible:ring outline-none transition duration-300 border border-transparent bg-yellow-400 dark:focus:outline-none hover:bg-yellow-500 2xl:text-base disabled:pointer-events-none disabled:opacity-50 ring-zinc-500 dark:ring-zinc-200"
+                >Send Message</button
+              >
+            </div><div class="mt-3 text-center">
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">We'll get back to you in 1-2 business days.</p>
+            </div>
+          </form>
+        </div><div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+          <div class="flex gap-x-7 py-6">
+            <svg
+              class="mt-1.5 h-6 w-6 flex-shrink-0 text-neutral-600 dark:text-neutral-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              >
+              </path>
+            </svg>
+            <div class="grow">
+              <h3 class="font-bold text-neutral-700 dark:text-neutral-300">Phone Number</h3>
+              <a
+                class="group mt-2 inline-flex items-center gap-x-2 rounded-lg text-sm font-medium text-zinc-600 outline-none ring-zinc-500 transition duration-300 hover:text-zinc-800 focus-visible:ring dark:text-zinc-400 dark:ring-zinc-200 dark:hover:text-zinc-200 dark:focus:outline-none dark:focus:ring-1"
+                href="tel:+977 9800000001"
+                >+977 9800000001
+              </a>
+            </div>
+          </div>
+    
+          <div class="flex gap-x-7 py-6">
+            <svg
+              class="mt-1.5 h-6 w-6 flex-shrink-0 text-neutral-600 dark:text-neutral-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <title></title>
+              <path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class=""></path>
+              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" class=""> </path>
+            </svg>
+            <div class="grow">
+              <h3 class="font-bold text-neutral-700 dark:text-neutral-300">Visit our office</h3><p
+                class="mt-1 text-sm text-neutral-600 dark:text-neutral-400"
+              >
+                Ramechhap Sherpa construction pvt. ltd.
+              </p>
+              <p class="mt-1 text-sm italic text-neutral-500">
+                Kathmandu-32 Tinkune, Nepal
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-x-7 py-6">
+            <svg
+              class="mt-1.5 h-6 w-6 flex-shrink-0 text-neutral-600 dark:text-neutral-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <title></title>
+              <path
+                d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+                class=""></path>
+            </svg>
+            <div class="grow">
+              <h3 class="font-bold text-neutral-700 dark:text-neutral-300">Contact us by email</h3><p
+                class="mt-1 text-sm text-neutral-600 dark:text-neutral-400"
+              >
+                Prefer the written word? Drop us an email at
+              </p><a
+                class="group mt-2 inline-flex items-center gap-x-2 rounded-lg text-sm font-medium text-zinc-600 outline-none ring-zinc-500 transition duration-300 hover:text-zinc-800 focus-visible:ring dark:text-zinc-400 dark:ring-zinc-200 dark:hover:text-zinc-200 dark:focus:outline-none dark:focus:ring-1"
+                href="#">info@rsc.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
+  </section>
+  <BlogLatestPosts
+    
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  />
+</Layout>
